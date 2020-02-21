@@ -3,18 +3,12 @@ import s from './Dialogs.module.css'
 import DialogItem from './DialogItem/DialogsItem'
 import Message from './Message/Message'
 
-
-
 const Dialogs = (props) => {
-
-
   const dialogsElements = props.dialogs.map((item) => {
     return (
       <div key={item.id} className={s.dialogsElements}>
         <img src={item.url} alt=""/>
         <DialogItem name={item.name} id={item.id} />
-
-
       </div>
     )
   })
@@ -48,7 +42,6 @@ const Dialogs = (props) => {
         />
         <button onClick={onSendMessageClick}>AddMessage</button>
       </div>
-
     </div>
 
   )

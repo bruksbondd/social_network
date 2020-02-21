@@ -2,6 +2,7 @@
 
 # ignore all logs
 /src/api
+yarn.lock
 
 # dependencies
 /node_modules
