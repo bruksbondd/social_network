@@ -1,0 +1,15 @@
+.profileInfo {
+}
+.profileInfo .photoTop {
+  height: 200px;
+}
+
+.descriptionBlock {
+  padding: 10px;
+}
+.descriptionBlock img {
+  width: 200px;
+  height: auto;
+}
+
+
