@@ -7,6 +7,8 @@ import {
 } from '../../redux/userReducer'
 import Users from './Users'
 import Preloader from './../common/preloader/Preloader'
+import { withAuthRedirect } from '../../hoc/withAuthRedirect'
+import Dialogs from '../Dialogs/Dialogs'
 
 class UsersContainer extends Component{
   componentDidMount () {
@@ -16,6 +18,8 @@ class UsersContainer extends Component{
   onPageChanged = (pageNumber) => {
     this.props.getUsers(pageNumber, this.props.pageSize)
   }
+
+
 
   render () {
     return  (
@@ -49,6 +53,9 @@ let mapStateToProps = (state) => {
     followingInProgress: state.usersPage.followingInProgress
   }
 }
+
+let AuthRedirectComponent = withAuthRedirect( UsersContainer)
+
 export default connect(mapStateToProps, {
   getUsers, follow,
-  unfollow})(UsersContainer)
+  unfollow})(AuthRedirectComponent)
