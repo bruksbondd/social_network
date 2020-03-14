@@ -1,6 +1,6 @@
 import React from 'react'
 import style from './Header.module.css'
-import { NavLink } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 
 const Header = (props) => {
 
@@ -9,10 +9,11 @@ const Header = (props) => {
         <NavLink to='/'>
           <img src="http://mintsplash.net/wp-content/themes/mintsplash/css/images/logo.svg" alt="logo"/>
         </NavLink>
-
         <div className={style.loginBlock}>
+
           {props.isAuth
-            ? props.login
+
+            ? <div>{props.login} <button onClick={props.logout}>Log out</button></div>
             : <NavLink to={'/login'}>Login</NavLink>
           }
         </div>

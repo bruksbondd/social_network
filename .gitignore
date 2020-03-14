@@ -3,6 +3,8 @@
 # ignore all logs
 /src/api
 yarn.lock
+.idea
+package-lock.json
 
 # dependencies
 /node_modules

@@ -25,7 +25,7 @@ let Users = (props) => {
               > {p}
                 </span>
             )
-            console.log(props.currentPage)
+
           })
         }
 
