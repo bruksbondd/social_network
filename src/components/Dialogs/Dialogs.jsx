@@ -25,7 +25,8 @@ const Dialogs = (props) => {
 
 
   const addNewMessage = (value) => {
-    props.sendMessage(value.newMessageBody)
+debugger
+    props.sendMessage(value.newMessageText)
   }
 
   return (
@@ -45,8 +46,8 @@ const AddMessageForm = (props) => {
   return (
     <form onSubmit={props.handleSubmit}>
       <Field
-        placeholder='Enter your massage'
-        name="newMessageBody"
+        placeholder="Add message"
+        name="newMessageText"
         component={Textarea}
         validate={[required, maxLength10]}
       />
@@ -58,6 +59,7 @@ const AddMessageForm = (props) => {
 const AddMessageFormRedux = reduxForm({
   form: 'dialogAddMessageForm'
 })(AddMessageForm)
+
 
 
 

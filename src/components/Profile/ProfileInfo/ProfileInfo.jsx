@@ -2,7 +2,8 @@ import React from 'react'
 import style from './ProfileInfo.module.css'
 import Preloader from '../../common/preloader/Preloader'
 import userPhoto from '../../../assets/images/user.png'
-import ProfileStatus from './ProfileStatus'
+// import ProfileStatus from './ProfileStatus'
+import ProfileStatusWithHooks from './ProfileStatusWithHooks'
 
 const ProfileInfo = (props) => {
   if (!props.profile) {
@@ -20,7 +21,7 @@ const ProfileInfo = (props) => {
         <h4>{props.profile.fullName}</h4>
         <p>About: {props.profile.aboutMe}</p>
         <h5>looking for a Job: {props.profile.lookingForAJob ? 'Yes' : 'No'}</h5>
-        <ProfileStatus
+        <ProfileStatusWithHooks
           status={props.status}
           updateStatus={props.updateStatus}
         />

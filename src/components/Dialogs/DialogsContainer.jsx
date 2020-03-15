@@ -7,6 +7,7 @@ import {withAuthRedirect} from '../../hoc/withAuthRedirect'
 
 import { connect } from 'react-redux'
 import { compose } from 'redux'
+import { reset } from 'redux-form'
 
 
 
@@ -23,7 +24,9 @@ let mapStateToProps = (state) => {
 let mapDispatchToProps = (dispatch) => {
   return {
     sendMessage: (newMessageBody) => {
+
       dispatch(sendMessageCreator(newMessageBody))
+      dispatch(reset('dialogAddMessageForm'))
     }
   }
 }

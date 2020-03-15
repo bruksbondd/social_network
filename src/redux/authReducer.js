@@ -32,7 +32,7 @@ export const getAuthUserData = () => (dispatch) => {
       .then((response) => {
         if (response.data.resultCode === 0) {
           let { id, email, login } = response.data.data
-        debugger
+
           dispatch(setAuthUserData(id, email, login, true))
         }
       })
