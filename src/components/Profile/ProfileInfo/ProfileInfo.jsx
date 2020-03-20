@@ -5,25 +5,21 @@ import userPhoto from '../../../assets/images/user.png'
 // import ProfileStatus from './ProfileStatus'
 import ProfileStatusWithHooks from './ProfileStatusWithHooks'
 
-const ProfileInfo = (props) => {
-  if (!props.profile) {
+const ProfileInfo = ({ profile, status, updateStatus }) => {
+  if (!profile) {
     return <Preloader/>
   }
 
   return (
     <div className={style.profileInfo}>
-      {/*<img*/}
-      {/*  className={style.photoTop}*/}
-      {/*  src="http://balkanfun.mk/wp-content/uploads/2018/02/cameo-island-tranquil-zante-beach-resort-destination-greece.jpg"*/}
-      {/*  alt=""/>*/}
       <div className={style.descriptionBlock}>
-        <img src={props.profile.photos.large? props.profile.photos.large : userPhoto} alt='user'/>
-        <h4>{props.profile.fullName}</h4>
-        <p>About: {props.profile.aboutMe}</p>
-        <h5>looking for a Job: {props.profile.lookingForAJob ? 'Yes' : 'No'}</h5>
+        <img src={profile.photos.large ? profile.photos.large : userPhoto} alt='user'/>
+        <h4>{profile.fullName}</h4>
+        <p>About: {profile.aboutMe}</p>
+        <h5>looking for a Job: {profile.lookingForAJob ? 'Yes' : 'No'}</h5>
         <ProfileStatusWithHooks
-          status={props.status}
-          updateStatus={props.updateStatus}
+          status={status}
+          updateStatus={updateStatus}
         />
       </div>
     </div>

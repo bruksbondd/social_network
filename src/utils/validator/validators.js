@@ -1,8 +1,14 @@
 export const required = value => {
+
   if(value) {
     return undefined
   }
   return 'Field is required'
+}
+
+export const optional = value => {
+debugger
+  return undefined
 }
 
 export const maxLengthCreator = (maxLength) => (value) => {
