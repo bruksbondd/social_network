@@ -19,8 +19,9 @@ const Users = ({ totalUsersCount, pageSize, onPageChanged, currentPage, users, f
       <div>
         {
           users.map((user) => {
+
             return (
-              <User user={user} follow={follow} unfollow={unfollow} followingInProgress={followingInProgress}/>
+              <User key={user.id}  user={user} follow={follow} unfollow={unfollow} followingInProgress={followingInProgress}/>
             )
           })
         }

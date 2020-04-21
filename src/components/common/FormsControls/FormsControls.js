@@ -40,8 +40,8 @@ export const createField = (placeholder, name, validators, component, props = {}
       <Field
         placeholder={placeholder}
         name={name}
-        component={component}
         validate={validators}
+        component={component}
         {...props}
       />
       {text}

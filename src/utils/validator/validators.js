@@ -7,7 +7,6 @@ export const required = value => {
 }
 
 export const optional = value => {
-debugger
   return undefined
 }
 

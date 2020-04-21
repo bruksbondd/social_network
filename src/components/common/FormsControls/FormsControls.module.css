@@ -1,5 +1,5 @@
 .formControl {
-
+  color: black;
 }
 
 .formControl.error input, .formControl.error textarea {

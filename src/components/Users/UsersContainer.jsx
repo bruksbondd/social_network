@@ -29,8 +29,6 @@ class UsersContainer extends Component{
     requestUsers(pageNumber, pageSize)
   }
 
-
-
   render () {
     return  (
       <>
