@@ -64,7 +64,7 @@ class App extends Component {
             </Route>
             <Route path='/news'>News</Route>
             <Route path='/music'>Music</Route>
-            <Route path='/users' render={() => <UsersContainer/>}/>
+            <Route path='/users' render={() => <UsersContainer pageTitle={'Samyrai'}/>}/>
             <Route path='/settings'>Settings</Route>
 
             <Route path='/login/facebook'>Facebook</Route>
