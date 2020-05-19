@@ -1,10 +1,6 @@
-.users {
-
-}
-
-.photo {
-  width: 120px;
-  height: auto;
+.userPhoto {
+     width: 100px;
+    height: 100px;
 }
 
 
