@@ -1,11 +1,17 @@
-.descriptionBlock {
-    padding: 10px;
+.profileInfo {
+}
+.profileInfo .photoTop {
+  height: 200px;
 }
 
-.mainPhoto {
-    max-width: 200px;
+.descriptionBlock {
+  padding: 10px;
+}
+.descriptionBlock img {
+  width: 200px;
+  height: auto;
 }
 
 .contact {
-    padding-left: 10px;
+  padding-left: 20px;
 }
