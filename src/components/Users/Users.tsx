@@ -1,43 +1,37 @@
-import React, {FC} from 'react'
-import Paginator from '../common/Paginator/Paginator'
-import User from './User'
-import {UserType} from "../../types/types";
+import React, {FC} from 'react';
+import Paginator from "../common/Paginator/Paginator";
+import User from "./User";
+import {UserType} from '../../types/types';
 
-type PropsTypes = {
+type PropsType = {
     totalUsersCount: number
     pageSize: number
-    onPageChanged: (pageNumber: number) => void
     currentPage: number
+    onPageChanged: (pageNumber: number) => void
     users: Array<UserType>
-    follow: (id: number) => void
-    unfollow: (id: number) => void
     followingInProgress: Array<number>
-
+    unfollow: (userId: number) => void
+    follow: (userId: number) => void
 }
 
-const Users: FC<PropsTypes> = ({totalUsersCount, pageSize, onPageChanged, currentPage, users, follow, unfollow, followingInProgress, ...props}) => {
-    return (
+
+let Users: FC<PropsType> = ({currentPage, totalUsersCount, pageSize, onPageChanged, users,
+                                ...props}) => {
+    return <div>
+        <Paginator currentPage={currentPage} onPageChanged={onPageChanged}
+                   totalItemsCount={totalUsersCount} pageSize={pageSize}/>
         <div>
-            <h2>Users</h2>
-            <Paginator
-                totalItemCount={totalUsersCount}
-                pageSize={pageSize}
-                onPageChanged={onPageChanged}
-                currentPage={currentPage}
-            />
-            <div>
-                {
-                    users.map((user) => {
-
-                        return (
-                            <User key={user.id} user={user} follow={follow} unfollow={unfollow} followingInProgress={followingInProgress}/>
-                        )
-                    })
-                }
-            </div>
-
+            {
+                users.map(u => <User user={u}
+                                     followingInProgress={props.followingInProgress}
+                                     key={u.id}
+                                     unfollow={props.unfollow}
+                                     follow={props.follow}
+                    />
+                )
+            }
         </div>
-    )
+    </div>
 }
 
-export default Users
+export default Users;
